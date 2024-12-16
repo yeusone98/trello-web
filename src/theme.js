@@ -18,8 +18,35 @@ const theme = extendTheme({
         },
         dark: {
             palette: {
-                primary: cyan,
-                secondary: orange
+                mode: 'dark',
+                primary: {
+                    main: '#ff5252'
+                }
+            }
+        }
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none'
+                }
+            }
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    color: theme.palette.primary.main,
+                    fontSize: '0.875rem',
+                    '.MuiOutlinedInput-notchedOutline': {
+                        borderColor: theme.palette.primary.light
+                    },
+                    '&:hover': {
+                        '.MuiOutlinedInput-notchedOutline': {
+                            borderColor: theme.palette.primary.main
+                        }
+                    }
+                })
             }
         }
     }
