@@ -44,12 +44,12 @@ function AppBar() {
         <TextField id="outlined-search" label="Search..." type="search" size="small" />
         <SelectMode/>
         <Tooltip title="Notification">
-          <Badge color="secondary" variant="dot" sx={{ cursor:'pointer' }}>
-            <NotificationsNoneIcon />
+          <Badge color="secondary" variant="dot">
+            <NotificationsNoneIcon sx={{ cursor:'pointer', color:'primary.main' }} />
           </Badge>
         </Tooltip>
-        <Tooltip title="Help" sx={{ cursor:'pointer' }}>
-          <HelpOutlineOutlinedIcon/>
+        <Tooltip title="Help">
+          <HelpOutlineOutlinedIcon sx={{ cursor:'pointer', color:'primary.main' }}/>
         </Tooltip>
         <Profiles/>
       </Box>
