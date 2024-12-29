@@ -11,13 +11,13 @@ import { Tooltip } from '@mui/material'
 import { Button } from '@mui/material'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 const MENU_STYLES = {
-  color: 'primary.main',
-  backgroundColor: 'white', // Sửa lỗi chính tả
+  color: 'white',
+  backgroundColor: 'transparent', // Sửa lỗi chính tả
   border: 'none',
   px: '5px', // Sử dụng shorthand cho paddingX
   borderRadius: '4px',
   '& .MuiSvgIcon-root': {
-    color: 'primary.main'
+    color: 'white'
   },
   '&:hover': { // Sửa cú pháp hover
     backgroundColor: 'primary.50' // Sử dụng tên hợp lệ
@@ -27,7 +27,6 @@ const MENU_STYLES = {
 function BoardBar() {
   return (
     <Box sx={{
-      backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#333' : 'white', // Đặt màu nền phù hợp theo chế độ
       color: (theme) => theme.palette.mode === 'dark' ? 'white' : 'black', // Đặt màu chữ phù hợp với nền
       width: '100%',
       height: (theme) => theme.trello.boardBarHeight,
@@ -37,7 +36,9 @@ function BoardBar() {
       gap: 2,
       paddingX: 2,
       overflowX: 'auto',
-      borderTop: '1px solid #00bfa5'
+      borderTop: '1px solid #00bfa5',
+      backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#34495e' : '#1976d2',
+      borderBottom: '1px solid #ffffff'
     }}>
       <Box sx={{ display: 'flex ', alignItems: 'center', gap: 2 }}>
         <Chip
@@ -72,13 +73,18 @@ function BoardBar() {
       </Box>
 
       <Box sx={{ display: 'flex ', alignItems: 'center', gap: 2 }}>
-        <Button variant="outlined" startIcon={<PersonAddIcon/>}>Invite</Button>
+        <Button variant="outlined" startIcon={<PersonAddIcon/>} sx={{ color: 'white', borderColor: 'white', '&: hover': { borderColor: 'white' } }}>Invite</Button>
         <AvatarGroup max={3}
           sx={{
+            gap: '10px',
             '& .MuiAvatar-root':{
               width: 34,
               height: 34,
-              fontSize: 16
+              fontSize: 16,
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': { backgroundColor: '#a4b0be' }
             }
           }}>
           <Tooltip title="TanVuongDev">
