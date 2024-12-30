@@ -1,13 +1,14 @@
 /* eslint-disable indent */
 
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
-import BoardContent from './pages/Boards/BoardContent'
+import BoardContent from './pages/Boards/BoardContent/BoardContent'
 // import { teal, deepOrange, cyan, orange } from '@mui/material/colors'
 
 const APP_BAR_HEIGHT = '58px'
 const BOARD_BAR_HEIGHT = '60px'
 const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${BOARD_BAR_HEIGHT})`
-
+const COULUMN_HEADER_HEIGHT = '50px'
+const COULUMN_FOOTER_HEIGHT = '56px'
 
 
 
@@ -15,7 +16,10 @@ const theme = extendTheme({
     trello: {
         appBarHeight: APP_BAR_HEIGHT,
         boardBarHeight: BOARD_BAR_HEIGHT,
-        boardContentHeight: BOARD_CONTENT_HEIGHT
+        boardContentHeight: BOARD_CONTENT_HEIGHT,
+        column_header_height: COULUMN_HEADER_HEIGHT,
+        column_footer_height: COULUMN_FOOTER_HEIGHT
+
     },
 
     colorSchemes: {

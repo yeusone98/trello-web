@@ -10,6 +10,10 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import { Tooltip } from '@mui/material'
 import { Button } from '@mui/material'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import VpnLockIcon from '@mui/icons-material/VpnLock'
+import { capitalizeFirstLetter } from '~/utils/formatters'
+
+
 const MENU_STYLES = {
   color: 'white',
   backgroundColor: 'transparent', // Sửa lỗi chính tả
@@ -24,7 +28,8 @@ const MENU_STYLES = {
   }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
+
   return (
     <Box sx={{
       color: (theme) => theme.palette.mode === 'dark' ? 'white' : 'black', // Đặt màu chữ phù hợp với nền
@@ -43,14 +48,14 @@ function BoardBar() {
       <Box sx={{ display: 'flex ', alignItems: 'center', gap: 2 }}>
         <Chip
           sx={MENU_STYLES}
-          icon={<SyncLockIcon />}
-          label="Tan Vuong dev MERN stack Board"
+          icon={<DashboardIcon />}
+          label={board?.title}
           clickable
         />
         <Chip
           sx={MENU_STYLES}
-          icon={<DashboardIcon />}
-          label="Public/Private Workspace"
+          icon={<VpnLockIcon />}
+          label={capitalizeFirstLetter(board?.type)}
         />
         <Chip
           sx={MENU_STYLES}
